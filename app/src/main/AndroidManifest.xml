@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zhoujian.broadcastreceiver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+
+        <receiver android:name=".receiver.MyReceiver">
+            <!--指定广播的优先级 范围是-1000到1000-->
+            <intent-filter android:priority="200">
+                <!--指定广播所响应的Action-->
+                <action android:name="zhoujian.define.broadastreceiver"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.SecondReceiver">
+            <!--指定广播的优先级 范围是-1000到1000-->
+            <intent-filter android:priority="100">
+                <!--指定广播所响应的Action-->
+                <action android:name="zhoujian.define.broadastreceiver"/>
+            </intent-filter>
+        </receiver>
+
+
+
+
+
+    </application>
+
+</manifest>
